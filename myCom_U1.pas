@@ -17,15 +17,18 @@ type
     SaveDialog1: TSaveDialog;
     nrComm1: TnrComm;
     nrDeviceBox1: TnrDeviceBox;
-    Button1: TButton;
+    PutarKanan: TButton;
     Label1: TLabel;
     Label2: TLabel;
-    Button2: TButton;
-    Button3: TButton;
+    PutarKiri: TButton;
+    ZigZag: TButton;
     procedure aktif_ckBoxClick(Sender: TObject);
     procedure btn_cfgClick(Sender: TObject);
     procedure btn_ClearClick(Sender: TObject);
     procedure btn_SaveClick(Sender:TObject);
+    procedure PutarKananClick(Sender: TObject);
+    procedure PutarKiriClick(Sender: TObject);
+    procedure ZigZagClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -77,11 +80,27 @@ procedure TForm1.btn_ClearClick(Sender: TObject);
 var
   s : string;
 begin
-s := 'Clear data?';
-if Application.MessageBox(PChar(s),'KONFIRMASI',
-MB_OKCANCEL + MB_ICONQUESTION + MB_DEFBUTTON2)= IDOK then
+  s := 'Clear data?';
+  if Application.MessageBox(PChar(s),'KONFIRMASI',
+  MB_OKCANCEL + MB_ICONQUESTION + MB_DEFBUTTON2)= IDOK then
+    begin
+      Memo1.Lines.Clear;
+    end;
+end;
+
+procedure TForm1.PutarKananClick(Sender: TObject);
 begin
-  Memo1.Lines.Clear;
+  nrComm1.SendString('putarKanan');
 end;
+
+procedure TForm1.PutarKiriClick(Sender: TObject);
+begin
+  nrComm1.SendString('putarKiri');
 end;
+
+procedure TForm1.ZigZagClick(Sender: TObject);
+begin
+  nrComm1.SendString('ZigZag');
+end;
+
 end.

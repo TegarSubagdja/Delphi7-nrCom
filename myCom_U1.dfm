@@ -1,6 +1,6 @@
 object Form1: TForm1
-  Left = 340
-  Top = 158
+  Left = 374
+  Top = 81
   Width = 531
   Height = 335
   Caption = '152021169 Com Terminal'
@@ -60,7 +60,7 @@ object Form1: TForm1
       TabOrder = 0
       OnClick = aktif_ckBoxClick
     end
-    object Button1: TButton
+    object PutarKanan: TButton
       Left = 272
       Top = 48
       Width = 75
@@ -73,8 +73,9 @@ object Form1: TForm1
       Font.Style = [fsBold]
       ParentFont = False
       TabOrder = 1
+      OnClick = PutarKananClick
     end
-    object Button2: TButton
+    object PutarKiri: TButton
       Left = 352
       Top = 48
       Width = 75
@@ -87,8 +88,9 @@ object Form1: TForm1
       Font.Style = [fsBold]
       ParentFont = False
       TabOrder = 2
+      OnClick = PutarKiriClick
     end
-    object Button3: TButton
+    object ZigZag: TButton
       Left = 432
       Top = 48
       Width = 75
@@ -101,6 +103,7 @@ object Form1: TForm1
       Font.Style = [fsBold]
       ParentFont = False
       TabOrder = 3
+      OnClick = ZigZagClick
     end
   end
   object Memo1: TMemo
